@@ -1,7 +1,7 @@
 import Button from "./Button";
 export default function Friend({ friend, onSelect, selectfriend }) {
     let isSelected = selectfriend?.id === friend.id;
-    
+
     return (
         <li className={isSelected ? 'selected' : ''}>
             <img src={friend.image}></img>

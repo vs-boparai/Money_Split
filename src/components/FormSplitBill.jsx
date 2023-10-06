@@ -13,10 +13,10 @@ export default function FormSplitBill({ selectfriend, handleAmount }) {
     }
     let otherPersonBalance = bal ? total - bal : "";
 
-    function handleSubmit(e){
+    function handleSubmit(e) {
         e.preventDefault();
-        if (!bal || !total )return;
-        handleAmount(person==='You' ? otherPersonBalance : -bal);
+        if (!bal || !total) return;
+        handleAmount(person === 'You' ? otherPersonBalance : -bal);
 
 
     }
