@@ -9,7 +9,6 @@ export default function App() {
   const [show, setShow] = useState(false);
   const [friends, newFriends] = useState([...initialFriends]);
   const [selectfriend, setSelect] = useState(null);
-  const [amount, setAmount] = useState();
 
   const handleShow = () => {
     setShow((show) => !show);
@@ -22,8 +21,15 @@ export default function App() {
     setSelect((cur) => (cur?.id === friend.id ? null : friend));
     setShow(false);
   };
-  const handleAmount = () => {
-    setAmount();
+  const handleAmount = (value) => {
+    console.log(value);
+    newFriends((friends) =>
+      friends.map((friend) =>
+        friend.id === selectfriend.id
+          ? { ...friend, balance: friend.balance + value }
+          : friend
+      )
+    );
   };
 
   return (
@@ -41,7 +47,7 @@ export default function App() {
         {selectfriend && (
           <FormSplitBill
             selectfriend={selectfriend}
-            balanceAmount={handleAmount}
+            handleAmount={handleAmount}
           ></FormSplitBill>
         )}
       </div>
