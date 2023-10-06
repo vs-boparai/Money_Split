@@ -4,7 +4,7 @@ export default function Friend({ friend, onSelect, selectfriend }) {
 
     return (
         <li className={isSelected ? 'selected' : ''}>
-            <img src={friend.image}></img>
+            <img src={friend.image} alt={friend.name}></img>
             <h3>{friend.name}</h3>
             {friend.balance < 0 && (
                 <p className="red">
