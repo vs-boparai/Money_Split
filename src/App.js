@@ -30,6 +30,7 @@ export default function App() {
           : friend
       )
     );
+    setSelect(null);
   };
 
   return (
